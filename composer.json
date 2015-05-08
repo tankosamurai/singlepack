@@ -1,0 +1,19 @@
+{
+    "name": "tankosamurai/singlepack",
+    "authors": [
+        {
+            "name": "tankosamurai",
+            "email": "tankosamurai@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": [
+            "lib/Singlepack.php"
+        ],
+
+        "psr-4": {
+            "Singlepack\\": "lib/"
+        }
+    }
+}
