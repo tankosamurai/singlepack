@@ -1,6 +1,6 @@
 <?php
 
-namespace Rakeem;
+namespace Singlepack;
 
 class Endianness {
 
