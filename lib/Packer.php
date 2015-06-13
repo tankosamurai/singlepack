@@ -44,6 +44,11 @@ class Packer {
         }
     }
 
+    static function packString($string){
+        $len = \pack("C", strlen($string));
+        return $len . $string;
+    }
+
 }
 
 ?>

@@ -7,6 +7,8 @@ function pack($format, $object){
         return Packer::packArray($format, $object);
     }else if(is_numeric($object)){
         return Packer::packNumeric($format, $object);
+    }else if($format === "S"){
+        return Packer::packString($object);
     }else{
         return \pack($format, $object);
     }
@@ -19,6 +21,8 @@ function unpack($format, $object){
         return Unpacker::unpackTriadLittleEndian($object);
     }else if("F" === $format){
         return Unpacker::unpackFloat($object);
+    }else if("S" === $format){
+        return Unpacker::unpackString($object);
     }else{
         return \unpack($format, $object)[1];
     }

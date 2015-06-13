@@ -23,6 +23,11 @@ class Unpacker {
         }
     }
 
+    static function unpackString($string){
+        $len = \unpack("C", $string)[1];
+        return substr($string, 1, $len);
+    }
+
 }
 
 ?>
