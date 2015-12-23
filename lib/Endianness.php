@@ -8,8 +8,7 @@ class Endianness {
 
     static function isBig(){
         if(!isset(self::$endianness)){
-            $pack = pack("f", 1.0);
-            self::$endianness = unpack("C*", $pack)[1] === 0;
+            self::$endianness = unpack("H*", pack("f", 1.0))[1] === "0000803f";
         }
 
         return self::$endianness;
