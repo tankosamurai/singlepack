@@ -32,6 +32,8 @@ Singlepack\pack("F", 1.0); # returns BigEndian-float packed value.
 | V  | short | 4 Byte  | Little |
 | J  | long | 8 Byte | Big  |
 | P  | long | 8 Byte | Little |
+| S  | String | 1 Byte length | Big |
+| X  | Text | 2 Byte length | Big |
 
 # Installation for Composer
 
