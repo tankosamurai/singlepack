@@ -36,6 +36,11 @@ class Unpacker {
         return substr($string, 1, $len);
     }
 
+    static function unpackText($string){
+        $len = \unpack("n", $string)[1];
+        return substr($string, 2, $len);
+    }
+
 }
 
 ?>

@@ -9,6 +9,8 @@ function pack($format, $object){
         return Packer::packNumeric($format, $object);
     }else if($format === "S"){
         return Packer::packString($object);
+    }else if($format === "X"){
+        return Packer::packText($object);
     }else{
         return \pack($format, $object);
     }
@@ -25,6 +27,8 @@ function unpack($format, $object){
         return Unpacker::unpackDouble($object);
     }else if("S" === $format){
         return Unpacker::unpackString($object);
+    }else if("X" === $format){
+        return Unpacker::unpackText($object);
     }else{
         return \unpack($format, $object)[1];
     }

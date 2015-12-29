@@ -61,6 +61,11 @@ class Packer {
         return $len . $string;
     }
 
+    static function packText($text){
+        $len = \pack("n", strlen($text));
+        return $len . $text;
+    }
+
 }
 
 ?>
