@@ -17,9 +17,9 @@ class Unpacker {
 
     static function unpackFloat($string){
         if(Endianness::isBig()){
-            return \unpack("f", strrev($string))[1];
-        }else{
             return \unpack("f", $string)[1];
+        }else{
+            return \unpack("f", strrev($string))[1];
         }
     }
 
