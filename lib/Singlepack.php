@@ -21,6 +21,8 @@ function unpack($format, $object){
         return Unpacker::unpackTriadLittleEndian($object);
     }else if("F" === $format){
         return Unpacker::unpackFloat($object);
+    }else if("D" === $format or "d" === $format){
+        return Unpacker::unpackDouble($object);
     }else if("S" === $format){
         return Unpacker::unpackString($object);
     }else{

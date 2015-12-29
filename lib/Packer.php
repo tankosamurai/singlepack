@@ -19,6 +19,8 @@ class Packer {
             return self::packTriad($numeric);
         }else if("F" === $format){
             return self::packFloat($numeric);
+        }else if("D" === $format or "d" === $format){
+            return self::packDouble($numeric);
         }else{
             return \pack($format, $numeric);
         }
@@ -36,6 +38,16 @@ class Packer {
 
     static function packFloat($float){
         $string = \pack("f", $float);
+
+        if(Endianness::isBig()){
+            return $string;
+        }else{
+            return strrev($string);
+        }
+    }
+
+    static function packDouble($double){
+        $string = \pack("d", $double);
 
         if(Endianness::isBig()){
             return $string;

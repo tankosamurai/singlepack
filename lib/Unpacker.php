@@ -23,6 +23,14 @@ class Unpacker {
         }
     }
 
+    static function unpackDouble($string){
+        if(Endianness::isBig()){
+            return \unpack("d", $string)[1];
+        }else{
+            return \unpack("d", strrev($string))[1];
+        }
+    }
+
     static function unpackString($string){
         $len = \unpack("C", $string)[1];
         return substr($string, 1, $len);
