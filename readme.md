@@ -23,6 +23,8 @@ Singlepack\pack("F", 1.0); # returns BigEndian-float packed value.
 |---|---|---|---|
 | F | float | 4 Byte | Big |
 | f | float | 4 Byte | Little |
+| D | double | 8 Byte | Big |
+| d | double | 8 Byte | Little |
 | C  | char | 1 Byte  | - |
 | n  | int | 2 Byte | Big  |
 | v  | int | 2 Byte | Little  |
